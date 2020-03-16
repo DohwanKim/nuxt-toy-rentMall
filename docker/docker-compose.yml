@@ -1,0 +1,7 @@
+version: '3.1'
+
+services:
+  rentmall-front:
+    build: './nginx'
+    ports:
+    - '80:80'
