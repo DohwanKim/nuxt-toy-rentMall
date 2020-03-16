@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/rent_mall
+    working_directory: ~/rent_mall-frontend
     docker:
       - image: circleci/node:10.16.3
     steps:
