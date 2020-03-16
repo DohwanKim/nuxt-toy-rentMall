@@ -10,12 +10,14 @@ jobs:
           name: npm-update
           command: 'sudo npm install -g npm@latest'
       - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+          key: dependency-cache-{{ checksum "./rent_mall-frontend/package-lock.json" }}
       - run:
           name: npm-install
-          command: npm install
+          command: |
+            cd rent_mall-frontend
+            npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+          key: dependency-cache-{{ checksum "./rent_mall-frontend/package-lock.json" }}
           paths:
             - ./node_modules
       - run:
